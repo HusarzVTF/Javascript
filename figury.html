@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head> 
 <title> Instrukcje warunkowe </title>
 
@@ -40,20 +40,20 @@ var PPros=(a*b*0.5);
 
 document.write("<br> Obwod trojkata wynosi "+obwod);
 
-if(!(a==b) && !(b==c) && !(a==c) && !(a*a+b*b==c*c){
-document.write("Trojkat roznoboczny. Dla tego trojkata nie liczymy pola. <br>");
+if(!(a==b) && !(b==c) && !(a==c) && !(a*a+b*b==c*c)){
+document.write(" Trojkat roznoboczny. Dla tego trojkata nie liczymy pola.");
 }
 
 else if(a==b && b==c){
-document.write(" Trojkat rownobocznyny. Pole trojkata rownobocznego wynosi " +Prownb+"<br>");
+document.write(" Trojkat rownobocznyny. Pole trojkata rownobocznego wynosi " +Prownb);
 }
 
 else if(b==c && !(a==c)){
-document.write(" Trojkat rownoramienny. Pole trojkata rownoramiennego wynosi "+Prown+"<br>");
+document.write(" Trojkat rownoramienny. Pole trojkata rownoramiennego wynosi "+Prown);
 }
 else if(a*a+b*b==c*c)
 {
-document.write(" Trojkat prostokątny. Pole trojkata prostokątnego wynosi "+PPros+"<br>");
+document.write(" Trojkat prostokątny. Pole trojkata prostokątnego wynosi "+PPros);
 }
 
 }
@@ -68,7 +68,7 @@ var Pole=a*b;
 var Obwod=2*a+2*b;
 var Przekatna=Math.sqrt(a*a+b*b);
 
-document.write("Pole = "+Pole+" Obwod = "+Obwod+" Przekatna = "+Przekatna+"<br>");
+document.write("Pole = "+Pole+" Obwod = "+Obwod+" Przekatna = "+Przekatna);
 }
 
 /* instrukcja wykonywana w przypadku wybrania prostokąta i wprowadzenia niezbędnych danych odnośnie wymiarów.*/
@@ -77,7 +77,7 @@ if(figura=="koło"){
 var promien=prompt("podaj długość promienia","");
 var Pole=3.1415*promien*promien;
 var Obwod=2*3.1415*promien;
-document.write("Pole = "+Pole+" Obwod = "+Obwod+"<br>");
+document.write("Pole = "+Pole+" Obwod = "+Obwod);
 }
 }
 
@@ -85,7 +85,7 @@ document.write("Pole = "+Pole+" Obwod = "+Obwod+"<br>");
 
 else
 {
-document.write("podano nieprawidłową figurę albo coś innego <br>")
+document.write("podano nieprawidłową figurę albo coś innego")
 }
 
 /* instrukcja wykonywana w przypadku podania nieprawidłowych danych odnośnie wyboru figury.*/
