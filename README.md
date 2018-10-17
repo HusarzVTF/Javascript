@@ -11,3 +11,5 @@ Sortowanie trzech liczb rosnąco lub malejąco
 
 3.Liczenie pola, obwodu i danych szczególnych(przekątnej dla prostokąta) dla jednej z trzech wybranych figur:
 koło, prostokąt, trójkąt(rozróznia rodzaje trójkąta i zwraca informację jaki to typ)
+
+Jest bład, bo bierze roznoboczny z prostokatny i lipa plus odstepy
