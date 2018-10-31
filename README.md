@@ -4,7 +4,13 @@ Treści zadań do Instrukcji warunkowych
 1. Liczby:
 Dla liczby z określonego przedziału 0-100000000000000000000000000
 sprawdzi czy jest ona podzielna przez wskazaną liczbę bez reszty i ile razy
-całość wyświetli w przeglądarce w jednym z dwóch wybranych kolorów: czerwony, niebieski 
+całość wyświetli w przeglądarce w jednym z dwóch wybranych kolorów: czerwony, niebieski.
+W przypadku wpisania zamiast wskazanych kolorów czegokolwiek innego zwróci błąd niewłaściwego koloru.
+Jeśli zamiast liczby, którą chcemy podzielić zostanie wpisany tekst zwróci błąd wpisania tekstu zamiast liczby.
+Jeśli liczba wpisana do podzielenia nie będzie zawierać się wyznaczonym przedziale zwróci błąd liczby spoza przedziału.
+Jeśli zamiast liczby przez którą ma nastąpić dzielenie wpisany zostanie tekst zwróci błąd wpisania tekstu zamiast liczby.
+Jeśli liczba którą chcemy podzielić nie jest podzielna bez reszty przez liczbę przez którą chcemy ją podzielić zwróci błąd 
+informujący, że nie można wykonać dzielenia bez reszty w kolorze czerwonym. 
 
 sprawdzic co wyswietla jesli wprowadzi sie dane zle czy informuje o bledzie (else dopisac)
 
