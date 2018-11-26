@@ -2,17 +2,12 @@
 Treści zadań do Instrukcji warunkowych
 
 1. Liczby:
-Dla liczby z określonego przedziału 0-100000000000000000000000000
-sprawdzi czy jest ona podzielna przez wskazaną liczbę bez reszty i ile razy
+Dla liczby całkowitej z określonego przedziału 1-100000000000000000000000000 
+sprawdzi czy jest ona podzielna( z uwzględniem warunku, że nie dzielmy przez 0) przez wskazaną liczbę bez reszty i ile razy
 całość wyświetli w przeglądarce w jednym z dwóch wybranych kolorów: czerwony, niebieski.
-W przypadku wpisania zamiast wskazanych kolorów czegokolwiek innego zwróci błąd niewłaściwego koloru.
-Jeśli zamiast liczby, którą chcemy podzielić zostanie wpisany tekst zwróci błąd wpisania tekstu zamiast liczby.
-Jeśli liczba wpisana do podzielenia nie będzie zawierać się wyznaczonym przedziale zwróci błąd liczby spoza przedziału.
-Jeśli zamiast liczby przez którą ma nastąpić dzielenie wpisany zostanie tekst zwróci błąd wpisania tekstu zamiast liczby.
-Jeśli liczba którą chcemy podzielić nie jest podzielna bez reszty przez liczbę przez którą chcemy ją podzielić zwróci błąd 
-informujący, że nie można wykonać dzielenia bez reszty w kolorze czerwonym. 
-
-sprawdzic co wyswietla jesli wprowadzi sie dane zle czy informuje o bledzie (else dopisac)
+Użytkownik może zakończyć działanie programu w dowolnym momencie wówczas na stronie zostanie wyświetlony tekst o zakończeniu 
+pracy programu. Wprowadzane kolejne zmienne takie jak kolor, liczba do podzielenia, liczba przez którą bedziemy dzielić 
+są walidowane pod kątem poprawności na etapie wprowadzania.
 
 
 2. Sortowanie:
