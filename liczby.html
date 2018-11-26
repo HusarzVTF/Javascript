@@ -1,69 +1,165 @@
-﻿<html>
+<html>
 <head> 
-<title> Instrukcje warunkowe </title>
+
+
+<title> Liczby </title>
+
 
 <meta http-equiv="Content-Type"content="text/html;charset=iso-8859-2">
 <meta http-equiv="Content-Langugage"content="pl">
-	
+
+
+<style>
+
+/*Otworzenie dokumentu html, wstawienie tytułu i znaczników dla prawidłowego czytania polskich znaków.
+Otworzenie znacznika stylów w którym został umieszczony kod CSS*/
+
+body
+{ 
+background-color:powderblue;
+font-size:20px;
+font-family:"Times New Roman", italic;
+margin: 150px;
+}
+
+/*Opis stylów dla sekcji body. Wybór koloru tła, rozmiaru czcionki, stylu czcionki i rozmiaru marginesu*/
+
+h1
+{
+font-size:40px;
+font-family:"Times New Roman", italic;
+color:brown;
+}
+
+/*Opis stylów dla sekcji nagłówka. Wybór koloru czcionki, stylu czcionki i rozmiaru*/
+
+
+</style>	
+
+
+<h1>Liczby i ich podzielniki</h1>
+
 
 </head>
 
-<body>
+<body align="center">
+
 <script type="text/javascript">
 
-/*zad1 Dla liczby z określonego przedziału 0-100000000000000000000000000
-sprawdzi czy jest ona podzielna przez wskazaną liczbę bez reszty i ile razy
-całość wyświetli w przeglądarce w jednym z dwóch wybranych kolorów: czerwony, niebieski 
-*/
+/* Zamknięcie sekcji stylów, tytuł nagłówka, wyśrodkowanie sekcji body i otworzenie skryptu Javascript*/
+
+
+loop:
+
+/*Zamknięcie całości skryptu JS w konstrukcji Label co umożliwia odwoływanie się ze środka skryptu do całej konstrukcji*/
+
+do{
 
 var kolor=prompt("podaj kolor do wyboru dwa: czerwony, niebieski","");
 
-/* zmienna, która przechowuje informacje odnośnie wybranego koloru*/
+/*Zmienna przechowująca informacje o wprowadzonym kolorze.*/
 
-var liczba=prompt("podaj liczbe z przedziału 0-100000000000000000000000000","")*1;
-
-/* zmienna, która przechowuje liczbę do podzielenia*/
-
-var podzielnik=prompt("podaj liczbę przez, którą chcesz ją podzielić","")*1;
-
-/* zmienna, która przechowuje liczbę przez, którą będziemy dzielić*/
-
-if(kolor=="czerwony" || kolor=="niebieski"){
-	
-if (kolor=="czerwony"){
-if (0<liczba<100000000000000000000000000 && liczba%podzielnik==0 )
+if(!kolor || !(kolor=="czerwony" || kolor=="niebieski"))
 {
+do
+{
+var pyt=confirm("Wpisano nieprawidłowy kolor lub nie podano żadnego. Czy chcesz sprobować ponownie?");       
+if(pyt==false){
+alert("Nie wprowadzono koloru lub wpisano nieprawidłowy");    
+document.write("<font color='red'> Koniec pracy programu </font>");
+break loop;  
+}
+else{    
+var kolor=prompt("podaj kolor do wyboru dwa: czerwony, niebieski","");
+}
+}while( !kolor || !(kolor=="czerwony" || kolor=="niebieski")) 
+}
+
+/*Instrukcja warunkowa służąca do walidowania informacji wprowadzonej przez użytkownika dla zmiennej kolor.
+W zależności od tego czy użytkownik chce po podaniu błędnego koloru spróbować ponownie czy nie wykonywane są
+odmienne operacje.*/
+
+var liczba=Number(prompt("podaj liczbę z przedziału 1-100000000000000000000000000",""));
+
+/*Zmienna przechowująca informacje odnośnie liczby, która ma być dzielona*/
+
+if(!liczba ||  (liczba<1 || liczba>100000000000000000000000000))
+{
+do{
+var wali=confirm("Nie podano liczby lub wpisano nieprawidłową. Czy chcesz sprobować ponownie?");   
+if(wali==true)
+{
+var liczba=Number(prompt("podaj liczbę z przedziału 1-100000000000000000000000000",""));
+}
+else{
+alert("Nie wprowadzono liczby lub wprowadzono nieprawidłową");    
+document.write("<font color='red'> Koniec pracy programu </font>");
+break loop;}
+}while(!liczba ||  (liczba<1 || liczba>100000000000000000000000000))
+}
+
+/*Instrukcja warunkowa służąca do walidowania informacji wprowadzonej przez użytkownika dla zmiennej liczba.
+W zależności od tego czy użytkownik chce po podaniu błędnej wartości dla zmiennej liczba spróbować ponownie czy nie wykonywane są
+odmienne operacje */
+
+
+var podzielnik=Number(prompt("Podaj liczbę przez, którą chcesz ją podzielić",""));
+
+/*Zmienna, która przechowuje  informacje o liczbie przez którą będziemy dzielić*/
+
+if(!podzielnik || liczba%podzielnik!==0 || podzielnik==0)
+{ 
+do{    
+var pytPodz=confirm("Podano nieprawidłowy dzielnik liczby lub podano dzielnik z resztą lub wpisano tekst. Czy chcesz sprobować ponownie?");    
+if(pytPodz==true)
+{     
+var podzielnik=Number(prompt("Podaj liczbę przez, którą chcesz ją podzielić",""));
+}
+else{
+alert("Nie wprowadzono podzielnika");    
+document.write("<font color='red'> Koniec pracy programu </font>");
+break loop;}
+}while(!podzielnik || liczba%podzielnik!==0 || podzielnik==0)
+}
+
+/*Instrukcja warunkowa służąca do walidowania informacji wprowadzonej przez użytkownika dla zmiennej podzielnik.
+W zależności od tego czy użytkownik chce po podaniu błędnej wartości dla zmiennej liczba spróbować ponownie czy nie wykonywane są
+odmienne operacje*/
+
+
+if (kolor=="czerwony"){
+
 var podzielone=liczba/podzielnik    
 document.write
-("<font color='red'>liczba"+" "+liczba+" "+"jest podzielna przez"+" "+podzielnik+" "+"dokładnie"+" "+podzielone+" "+"razy</font><br>")
-}
-else 
-{
-document.write("<font color='red'>podana liczba nie jest podzielna przez"+" "+podzielnik+" "+"bez reszty</font><br>")
-}
+("<font color='red'>liczba"+" "+liczba+" "+"jest podzielna przez"+" "+podzielnik+" "+"dokładnie"+" "+podzielone+" "+"razy <br> </font>")
 }
 
-/*instrukcja warunkowa wykonywana gdy zostanie wybrany kolor czerwony*/
+/*Instrukcja warunkowa wykonywana jeżeli wpisany został kolor czerwony*/
 
 if (kolor=="niebieski"){
-if (0<liczba<100000000000000000000000000 && liczba%podzielnik==0 && kolor=="niebieski")
-{
+
 var podzielone=liczba/podzielnik    
 document.write
-("<font color='blue'>liczba"+" "+liczba+" "+"jest podzielna przez"+" "+podzielnik+" "+"dokładnie"+" "+podzielone+" "+"razy</font><br>")
-}
-else 
-{
-document.write("<font color='blue'>podana liczba nie jest podzielna przez"+" "+podzielnik+" "+"bez reszty</font><br>")
-}
+("<font color='blue'>liczba"+" "+liczba+" "+"jest podzielna przez"+" "+podzielnik+" "+"dokładnie"+" "+podzielone+" "+"razy <br> </font>")
 }
 
-/*instrukcja warunkowa wykonywana gdy zostanie wybrany kolor niebieski*/
-}
-else {document.write("podano kolor nieprawidłowy<br>")}
+/*Instrukcja warunkowa wykonywana jeżeli wpisany został kolor niebieski*/
 
+
+}while(confirm("Czy chcesz sprawdzić kolejną liczbę?"))
+
+/* Cały skrypt jest zamknięty w pętli. */
+
+/*Poprawność działania skryptu była testowna  w przeglądarce Google Chrome.*/
 
 </script>
 </body>
 
+
 </html>
+
+
+
+
+
+
