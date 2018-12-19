@@ -1,7 +1,9 @@
 # Javascript
-Treści zadań do Instrukcji warunkowych
+
+Treści zadań. We wszystkich zadaniach liczby podawane przez użytkownika muszą być liczbami całkowitymi.
 
 1. Liczby:
+
 Dla liczby całkowitej z określonego przedziału 1-100000000000000000000000000 
 sprawdzi czy jest ona podzielna( z uwzględniem warunku, że nie dzielmy przez 0) przez wskazaną liczbę bez reszty i ile razy
 całość wyświetli w przeglądarce w jednym z dwóch wybranych kolorów: czerwony, niebieski.
@@ -17,7 +19,11 @@ Zrobic zeby w przyadku podania zlego typu sortowania wpisane cos bez sensu zwroc
 
 
 3. Figury:
+
 Liczenie pola, obwodu i danych szczególnych(przekątnej dla prostokąta, średnicy dla koła) dla jednej z trzech wybranych figur:
-koło, prostokąt, trójkąt(rozróznia rodzaje trójkąta i zwraca informację jaki to typ)
+koła, prostokąta, trójkąta(rozróżnia rodzaje trójkąta i zwraca informację jaki to typ). Reaguje na zdarzenia takie jak najechanie
+na dany obiekt(tło) kliknięcie w obiekt(przycisk i akapit). Użytkownik może zakończyć działanie programu w dowolnym momencie wówczas 
+na stronie zostanie wyświetlony tekst o zakończeniu pracy programu. Wszystkie zmienne są walidowane zaraz po wprowadzeniu w sposób
+uniemożliwiający dojście do końca procedury z błędnymi danymi.
 
 Jest błąd, bo bierze roznoboczny z prostokatny i lipa plus odstepy. Czy błąd został wyeliminowany?? Tak sprawdzic jeszcze raz profilaktycznie
