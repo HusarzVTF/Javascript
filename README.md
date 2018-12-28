@@ -1,5 +1,8 @@
 # Javascript
 
+Aplikacje przedstawione jako rozwiązania wszystkich poniższych zadań komunikują się z użytkownikiem
+za pomocą  wyskakujących w przeglądarce okienek. Za ich pośrednictwem użytkownik jest informowany
+co się dzieje i jakie dane trzeba wprowadzić.
 
 Treści zadań. We wszystkich zadaniach liczby podawane przez użytkownika muszą być liczbami całkowitymi.
 
