@@ -28,9 +28,6 @@ wybranym rodzajem sortowania oraz poda czas z obiektu date wraz ze strefą czaso
 w wersji skróconej angielskiej z dokładnością do sekundy. Reaguje też na zdarzenia
 najechanie sekcji body (zmiana koloru tła) oraz naciśnięcie przycisku do zmiany koloru tła.
 
-Jakoś raz zwrócił infinity 
-
-
 
 3. Figury:
 
