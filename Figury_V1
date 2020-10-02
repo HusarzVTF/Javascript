@@ -1,0 +1,556 @@
+<html>
+
+<head > <link rel="stylesheet" type="text/css" href="styl.css"> 
+
+<title> Licznie pól figur  </title>
+
+ 
+
+<meta http-equiv="Content-Type"content="text/html"charset="UTF-8">
+
+<center><h1> Licznie pól i obwodów dla koła, prostokąta, i  trójkątów.</h1></center>
+
+
+
+</head>
+
+<body align="center" onmouseover="myBTG()">
+
+
+  <section id="panel">
+
+    <p onclick="myP()">Zmień kolor tła na czerwony</p>
+
+     <p>
+
+     <button onclick="myChg()"> Zmnień kolor tła na fioletowy</button>
+
+    <button onclick="draw()"> Rysuj Figurę  </button>
+
+    <button onclick="anime()"> Włącz animację  </button>
+
+ 
+  
+  </p>
+
+  </section>
+  
+
+      
+
+ 
+<canvas id="canvas" width=wid height=hgt>
+
+    <script>
+
+
+
+
+        function draw() {
+          
+          var canvas = document.getElementById('canvas');
+          if (canvas.getContext){
+            var ctx = canvas.getContext('2d');
+
+        if (figura=="trójkąt"  ){
+            if (a*a+b*b==c*c){
+            ctx.beginPath();
+            ctx.moveTo(wid*0.17,hgt*0.17);
+            ctx.lineTo(wid*0.17,hgt*0.66);
+            ctx.lineTo(wid*0.66,hgt*0.17);
+            ctx.fillStyle = 'red';
+            ctx.fill();
+            
+            /* Rysuje trojkat prostokatny */
+
+            }
+
+            else if(b==c && !(a==c)){
+            ctx.beginPath();
+            ctx.moveTo(wid*0.17,hgt*0.17);
+            ctx.lineTo(wid*0.1,0.66*hgt);
+            ctx.lineTo(0.27*wid,0.66*hgt);
+            ctx.fillStyle = 'red';
+            ctx.fill();
+            
+          /* Rysuje trojkat rownoramienny */
+
+            }
+
+            else if(a==b && b==c){
+            ctx.beginPath();
+            ctx.moveTo(0.33*wid,0.07*hgt);
+            ctx.lineTo(0.17*wid,0.33*hgt);
+            ctx.lineTo(0.5*wid,0.33*hgt);
+            ctx.fillStyle = 'red';
+            ctx.fill();
+            
+            /* Rysuje trojkat rownoboczny */
+
+
+
+
+            }
+
+            else{
+            ctx.beginPath();
+            ctx.moveTo(0.5*wid,0.33*hgt);
+            ctx.lineTo(0.66*wid,0.5*hgt);
+            ctx.lineTo(0.66*wid,0.23*hgt);
+            ctx.fill();}
+            
+            /* Rysuje trojkat róznoboczny */
+
+        }
+        if(figura=="prostokąt"){
+
+  if(a==b){
+  ctx.beginPath();
+  ctx.moveTo(0,0);
+ if(wid<hgt){
+  ctx.lineTo(0,wid);
+  ctx.lineTo(wid,wid);
+  ctx.lineTo(wid,0);
+  ctx.fill();}
+ 
+else if(wid>hgt){
+  ctx.lineTo(0,hgt);
+  ctx.lineTo(hgt,hgt);
+  ctx.lineTo(hgt,0);
+  ctx.fill();
+  
+}
+else if(wid==hgt){
+  ctx.lineTo(0,hgt);
+  ctx.lineTo(wid,hgt);
+  ctx.lineTo(wid,0);
+  ctx.fill();
+
+}
+}
+
+
+/*kwadrat*/
+
+
+else if(!(a==b)){
+  ctx.beginPath();
+  ctx.moveTo(0,0);
+if(wid==hgt){
+  ctx.lineTo(0,0.5*hgt);
+  ctx.lineTo(wid,0.5*hgt);
+  ctx.lineTo(wid,0);
+  ctx.fill();
+}
+
+
+
+else if(!(wid==hgt)){
+  ctx.lineTo(0,hgt);
+  ctx.lineTo(wid,hgt);
+  ctx.lineTo(wid,0);
+  ctx.fill();
+ 
+  }
+
+} /*prostokat*/
+        }
+
+
+
+          }
+
+          if(figura=="koło"){
+            var centerX = canvas.width / 2;
+      var centerY = canvas.height / 2;
+      var radius = 30;
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      ctx.fillStyle = 'yellow';
+      ctx.fill();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = '#003300';
+      ctx.stroke();
+
+
+          }
+    
+          }
+          if(!figura){
+    document.write("Nie podano figury i dlatego nie da się jej narysować" +"<br>")
+          
+          }
+  
+          
+  
+       function anime()  {
+
+        var obrazek=document.getElementById('canvas').animate([
+    { transform: 'translate3D(0, 0, 0)' }, 
+    { transform: 'translate3D(0, -300px, 0)' }/*ten parametr zmienia zasięg animacji względem wielkosci bloku w którym jest zamknięta czyli do canvas*/
+  ], {
+    duration: 1000,
+    iterations: Infinity
+  })
+  
+  /* wprawia w ruch narysowana figure */
+
+}
+
+
+
+  
+    </script>
+
+
+
+
+
+</canvas>
+
+
+
+
+
+
+
+
+
+  
+<div id="centrum">
+
+    <center>
+
+<script type="text/javascript">
+
+/*
+Zamknięcie sekcji stylów, nagłówka strony.
+Otworzenie sekcji body oraz umieszczenie w niej 
+dwóch akapitów w tym jednego z przyciskiem.
+W sekcji body przypisano wywołanie funkcji zmieniającej
+kolor tła na zielony jeśli kursor myszy najedzie na ciało strony. 
+Do pierwszego paragrafu przypisano funkcję, 
+która po kliknięciu w tekst akapitu zmieni kolor tła na czerwony.
+W akapicie drugim umieszczono przycisk jest do niego przypisana funkcja, 
+która po kliknięciu przycisku zmieni kolor tła na fioletowy 
+*/
+
+
+loop:
+
+/*Otworzenie konstrukcji label w której został zamknięty cały kod*/
+
+do{
+
+
+var wid=prompt("Podaj szerokość figury, którą chcesz policzyć jednak nie większą niż 150")
+
+var hgt=prompt("Podaj długość figury, którą chcesz policzyć jednak nie większą niż 150")
+
+if(!Number(wid) || !Number(hgt)){
+alert("Wpisano "+wid+" i "+hgt+" lub nie podano żadnej");
+var rozm=confirm("Czy chcesz spróbować ponownie?");
+if(rozm==false){
+alert("Nie podano wymiarów dla figury.");
+document.write("Oba parametry zostaną ustawione na 150 px");
+wid=150;
+hgt=150;}
+if(rozm==true){
+var wid=prompt("Podaj szerokość figury, którą chcesz policzyć jednak nie większą niż 150")
+var hgt=prompt("Podaj długość figury, którą chcesz policzyć jednak nie większą niż 150")
+if((wid>150 || hgt>150) || (wid>150 && hgt>150)){
+alert("Wpisano wielkość parametrów spoza dopuszczalnego zakresu. Dlatego ich wartość zostanie ustawiona jako maksymalna dopuszczalna");
+wid=150;
+hgt=150;
+}
+
+}
+}
+
+/* Walidacja rozmiarow figury wg wskazanych kryteriow. Przyjmuje tylko liczby calkowite wieksze od zera. Dotyczy to wszystkich wartosci liczbowych podawanych dla aplikacji */
+
+if((wid>150 || hgt>150) || (wid>150 && hgt>150)){
+alert("Wpisano wielkość parametrów spoza dopuszczalnego zakresu. Dlatego ich wartość zostanie ustawiona jako maksymalna dopuszczalna");
+wid=150;
+hgt=150;
+}
+
+
+var figura=prompt("Podaj figurę, dla której chcesz policzyć pole, obwód, szczególne dane: do wyboru: prostokąt, trójkąt, koło","");
+
+/*Zmienna przechowująca informacje odnośnie wybranej figury */
+
+if (!figura || !(figura=="prostokąt" || figura=="trójkąt" || figura=="koło")){
+do{
+alert("Wpisano "+figura+" lub nie podano żadnej");
+var fig=confirm("Czy chcesz spróbować ponownie?");
+if(fig==false){
+alert("Wybrano zakończenie pracy programu.");
+document.write("Koniec pracy programu");
+break loop;
+}
+if(fig==true){
+var figura=prompt("Podaj figurę, dla której chcesz policzyć pole, obwód, szczególne dane: do wyboru: prostokąt, trójkąt, koło","");
+}
+}while(!figura || !(figura=="prostokąt" || figura=="trójkąt" || figura=="koło")) 
+}
+
+/*Instrukcja walidująca typ figury*/
+
+
+if(figura=="trójkąt"){
+
+var a= Number(prompt("Podaj długość podstawy trójkąta",""));
+
+/*Zmienna przechowująca długość podstawy trójkąta*/
+
+if(!a || a<0 || !Number(a)){
+do{    
+alert("Wpisano "+a+" zamiast długości podstawy trójkata lub nie podano w ogóle");
+var pyta=confirm("Czy chcesz spróbować ponownie?");
+if(pyta==false){
+alert("Wybrano zakończenie pracy programu");
+document.write("Koniec pracy programu");
+break loop;
+}
+else{
+var a=Number(prompt("Podaj długość podstawy trójkąta",""));
+}
+}while(!a || a<0 || !Number(a))
+}
+
+/*Instrukcja walidująca zmienną a, która jest podstawą trójkąta*/
+
+var b=Number(prompt("Podaj długość lewego ramienia",""));
+
+/*Zmienna przechowująca długość lewego ramienia trójkąta*/
+
+if(!b || b<0 || !Number(b)){
+do{    
+alert("Wpisano "+b+ " lub nie podano długości lewego ramienia");
+var pytb=confirm("Czy chcesz spróbować ponownie?");
+if(pytb==false){
+alert("Wybrano zakończenie pracy programu");
+document.write("Koniec pracy programu");
+break loop;
+}
+else{
+var b=Number(prompt("Podaj lewe ramię trójkąta",""));
+}
+}while(!b || b<0 || !Number(b))
+}
+
+/*Instrukcja walidująca zmienną b*/
+
+var c=Number(prompt("Podaj długość prawego ramienia",""));
+
+/*Zmienna przechowująca długość prawego ramienia trójkąta*/
+
+if(!c || c<0 || !Number(c)){
+do{    
+alert("Wpisano "+c+" lub nie podano długości prawego ramienia");
+var pytc=confirm("Czy chcesz spróbować ponownie?");
+if(pytc==false){
+alert("Wybrano zakończenie pracy programu");
+document.write("Koniec pracy programu");
+break loop;
+}
+else{
+var c=Number(prompt("Podaj prawe ramię trójkąta",""));
+}
+}while(!c || c<0 || !Number(c))
+}
+
+/*Instrukcja walidująca zmienną c*/
+
+
+
+if(a>b+c || b>a+c || c>a+b){
+do{    
+alert("Podane długości podstawy i ramion trójkąta uniemożliwiają złożenie trójkąta");
+var conf=confirm("Czy chcesz spróbować ponownie?");
+if(conf==false){
+alert("Wybrano zakończenie pracy programu");
+document.write("Koniec pracy programu.");
+break loop;
+}
+else{
+var a= Number(prompt("Podaj długość podstawy trójkąta",""));
+var b=Number(prompt("Podaj długość lewego ramienia",""));
+var c=Number(prompt("Podaj prawe ramię trójkąta",""));
+}
+}while(a>b+c || b>a+c || c>a+b)
+}
+
+/*Instrukcja sprawdzająca i walidująca czy z podanych długości boków trójkąta i podstawy można złożyć trójkąt.*/
+
+var obwod=a+b+c;
+
+var Prownb=(a*a*Math.sqrt(3))/4;
+
+var Prown=(0.5*a*Math.sqrt(b*b-0.4*a*a));
+
+var PPros=(a*b*0.5);
+
+/*Zmienne przechowujące obwód i pola poszczególnych trójkątów.*/
+
+
+if(!(a==b) && !(b==c) && !(a==c) && !(a*a+b*b==c*c)){
+document.write(" Trójkąt różnoboczny."+"<br>"+" Obwód trójkąta wynosi "+obwod+"<br>"+" Dla tego trójkąta nie liczymy pola. <br>");
+}
+
+else if(a==b && b==c){
+document.write(" Trójkąt równoboczny. "+"<br>"+" Obwód trójkąta wynosi "+obwod+"<br>"+"Pole trójkąta równobocznego wynosi " +Prownb+"<br>");
+}
+
+else if(b==c && !(a==c)){
+document.write(" Trójkąt równoramienny. "+"<br>"+" Obwód trójkąta wynosi "+obwod+"<br>"+"Pole trojkąta równoramiennego wynosi "+Prown+"<br>");
+}
+else if(a*a+b*b==c*c)
+{
+document.write(" Trójkąt prostokątny."+"<br>"+" Obwód trójkąta wynosi "+obwod+"<br>"+" Pole trojkąta prostokątnego wynosi "+PPros+"<br>");
+}
+
+}
+
+/* Instrukcja wykonywana w przypadku wybrania trójkąta i wprowadzenia niezbędnych danych odnośnie wymiarów.
+W zależności od typu trójkąta zostanie wyświetlona informacja o jego rodzaju i danych takich jak pole, obwód*/
+
+if(figura=="prostokąt"){
+
+var a=Number(prompt("Podaj długość podstawy prostokąta",""));
+
+/*Zmienna przechowująca długość podstawy prostokąta*/
+
+if(!a || a<0 || !Number(a)){
+do{    
+alert("Wpisano "+a+" lub nie podano długości podstawy prostokąta");
+var pyta=confirm("Czy chcesz spróbować ponownie?");
+if(pyta==false){
+alert("Wybrano zakończenie pracy programu");
+document.write("Koniec pracy programu");
+break loop;
+}
+else{
+var a=Number(prompt("Podaj podstawę prostokąta",""))
+}
+}while(!a || a<0 || !Number(a))
+}
+
+/*Instrukcja walidująca zmienną a*/
+
+var b=Number(prompt("Podaj długość boku",""));
+
+/*Zmienna przechowująca długość boku prostokąta */
+
+if(!b || b<0 || !Number(b)){
+do{    
+alert("Wpisano "+b+" lub nie podano boku prostokąta");
+var pytb=confirm("Czy chcesz spróbować ponownie?");
+if(pytb==false){
+alert("Wybrano zakończenie pracy programu");
+document.write("Koniec pracy programu");
+break loop;
+}
+else{
+var b=Number(prompt("Podaj bok prostokąta",""))
+}
+}while(!b || b<0 || !Number(b))
+}
+
+/*Instrukcja walidująca zmienną b*/
+
+var Pole=a*b;
+var Obwod=2*a+2*b;
+var Przekatna=Math.sqrt(a*a+b*b);
+
+/*Zmienne przechowujące pole, obwód i przekątną prostokąta*/
+
+if(a==b){
+  
+document.write(" Podane długości boku i podstawy są takie same co oznacza, że mamy do czynienia z kwadratem. Pole kwadratu= "+Pole+"<br>"+" Obwód kwadratu= "+Obwod+"<br>"+" Przekątna kwadratu= "+Przekatna+"<br>");
+
+}
+else{
+document.write("Pole prostokąta= "+Pole+"<br>"+" Obwód prostokąta= "+Obwod+"<br>"+" Przekątna prostokąta= "+Przekatna+"<br>");
+}
+}
+
+/* Instrukcja wykonywana w przypadku wybrania prostokąta i wprowadzenia niezbędnych danych odnośnie wymiarów.
+Wyświetli pole, obwód i przekątną prostokąta*/
+
+if(figura=="koło"){
+
+var promien=Number(prompt("Podaj długość promienia",""));
+
+/*Zmienna przechowująca długość promienia*/
+
+if(!promien || promien<0 || !Number(promien)){
+do{    
+alert("Wpisano "+promien+" lub nie podano długości promienia");
+var pytb=confirm("Czy chcesz spróbować ponownie?");
+if(pytb==false){
+alert("Wybrano zakończenie pracy programu");
+document.write("Koniec pracy programu");
+break loop;
+}
+else{
+var promien=Number(prompt("Podaj długość promienia",""))
+}
+}while(!promien || promien<0 || !Number(promien))
+}
+
+/*Instrukcja walidująca zmienną przechowującą długość promienia*/
+
+var Pole=3.1415*promien*promien;
+var Obwod=2*3.1415*promien;
+var Srednica=2*promien;
+
+/*Zmienne przechowujące obwód, pole i średnicę koła*/
+
+document.write("Pole koła= "+Pole+"<br>"+" Obwód koła= "+Obwod+"<br>"+ "Średnica koła= "+Srednica+"<br>");
+}
+
+/* Instrukcja wykonywana w przypadku wybrania koła i wprowadzenia niezbędnych danych odnośnie wymiarów.
+Wyświetli pole, obwód i średnicę koła */
+
+}while(confirm("Czy chcesz policzyć pole, obwód i wyszczególnione dane dla kolejnej figury?"))
+
+/* Całość kodu zamknięta w pętli, która wykona się przynajmniej raz*/
+
+function myBTG(){
+  document.body.style.backgroundColor = "green";
+}
+
+function myP(){
+
+document.body.style.backgroundColor = "red";
+}
+
+function myChg(){
+
+  document.body.style.backgroundColor = "purple";
+}
+
+/* Trzy funkcje zmieniające kolor tła na zielony, czerwony, fioletowy */
+
+
+
+
+
+</script>
+
+</center>
+
+</div>
+
+
+
+
+</body>
+
+</html>
+
+
+
+
